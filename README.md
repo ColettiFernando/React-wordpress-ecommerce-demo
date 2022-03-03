@@ -1,4 +1,4 @@
-# Live Demo: 
+# Live Demo: https://ecommerce-reactapp-demo.herokuapp.com
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
