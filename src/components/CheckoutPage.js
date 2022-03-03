@@ -73,7 +73,7 @@ export default function SpanningTable() {
   }
 
   let submitOrder= ()=> {
-    setBackdrop = true
+    setBackdrop(true);
     let info = billing;
     let lineItems = items;
 
