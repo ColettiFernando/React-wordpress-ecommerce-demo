@@ -77,6 +77,7 @@ export default function SpanningTable() {
     let lineItems = items;
 
     let order = { 
+      setBackdrop(true)
       billing: info,
       shipping: info,
       line_items: lineItems
@@ -151,7 +152,7 @@ export default function SpanningTable() {
         </TableBody>
       </Table>
     </TableContainer>
-    <Button onClick={submitOrder, () => setBackdrop(true)}>Create Order</Button>
+    <Button onClick={submitOrder}>Create Order</Button>
     <Button component={Link} to={'/ecommerce-react-demo/checkout'}>Back to shop</Button>
         </div>
         </div>
