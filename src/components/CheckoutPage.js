@@ -73,7 +73,6 @@ export default function SpanningTable() {
   }
 
   let submitOrder= ()=> {
-    setBackdrop(true);
     let info = billing;
     let lineItems = items;
 
@@ -86,7 +85,7 @@ export default function SpanningTable() {
     api.post("orders", order)
     .then(response=> {
       setCart([])
-      navigate(`/ecommerce-react-demo//order/${response.data.id}`)
+      navigate(`/ecommerce-react-demo/order/${response.data.id}`)
     })
   }
 
@@ -152,15 +151,16 @@ export default function SpanningTable() {
         </TableBody>
       </Table>
     </TableContainer>
-    <Button onClick={submitOrder}>Create Order</Button>
+    <Button onClick={submitOrder, () => setBackdrop(true)}>Create Order</Button>
     <Button component={Link} to={'/ecommerce-react-demo/checkout'}>Back to shop</Button>
         </div>
         </div>
-            {backDrop === true && <Backdrop
-  sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
->
-  <CircularProgress color="inherit" />
-</Backdrop>}
+    {backDrop === true && (<Backdrop
+      sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+      open={backDrop}
+    >
+      <CircularProgress color="inherit" />
+    </Backdrop>)}
     </>
     
   );
